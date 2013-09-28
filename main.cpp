@@ -51,7 +51,9 @@ int main(int argc, char **argv)
 		}
 	}
 	if (no_filenames) {
-		files.push_back( QString(prefs.default_filename) );
+		if (strcmp(prefs.default_filename, "") != 0) {
+			files.push_back( QString(prefs.default_filename) );
+		}
 	}
 
 	parse_xml_exit();

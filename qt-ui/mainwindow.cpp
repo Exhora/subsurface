@@ -775,6 +775,8 @@ void MainWindow::loadFiles(const QStringList fileNames)
 	char *error = NULL;
 	QByteArray fileNamePtr;
 
+	if (fileNames.isEmpty())
+		return;
 	for (int i = 0; i < fileNames.size(); ++i) {
 		fileNamePtr = fileNames.at(i).toLocal8Bit();
 		parse_file(fileNamePtr.data(), &error);
